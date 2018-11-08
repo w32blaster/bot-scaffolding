@@ -1,0 +1,38 @@
+
+# 
+# This is the demo file that is used in unit tests
+#
+commands:
+
+  /start: 
+    message:
+      en_gb: "Hello, this bot can help you to count clicks (CHANGE IT)"
+      ru_ru: "Privet, etot bot mozet delatj raznye fishki (CHANGE IT)"
+
+  /help: 
+    message: 
+      en_gb: "
+          /start - start the bot from the beginning\n
+          /help - show the help"
+      ru_ru: "
+         /start - na4atj bot\n
+         /help - pokazatj help"
+
+  /count:
+
+    message:
+      en_gb: "Clicks count is 0"
+      ru_ru: "Kol-vo klikov 0"
+
+    buttons: 
+      - row:
+        - action: increaseCount
+          label: 
+            en_gb: "Plus"
+            ru_ru: "Plus"
+        - action: decreaseCount
+          label: 
+            en_gb: "Minus"
+            ru_ru: "Minus"
+
+
