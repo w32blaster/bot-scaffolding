@@ -19,13 +19,13 @@ commands:
 			- ru-ru: "Kol-vo klikov 0"
 		- buttons:
 			- row:
-			 	- button:
-					action: increaseCount
+
+			  - action: increaseCount
 					label: 
 						- en-gb: "Plus"
 						- ru-ru: "Plus"
-				- button:
-					action: decreaseCount
+
+			  - action: decreaseCount
 					label: 
 						- en-gb: "Minus"
 						- ru-ru: "Minus" 
