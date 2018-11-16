@@ -14,14 +14,18 @@ func main() {
 	flag.Parse()
 
 	switch *pOperation {
-	case "init": {
+	case "init":
+		{
 
-		// generate the initial content. This command should be called only once to create a new project
-		generate.InitialStructure(*pTargetDir)
-	}
-	case "generate":{
+			// generate the initial content. This command should be called only once to create a new project
+			generate.InitialStructure(*pTargetDir)
+		}
+	case "generate":
+		{
 
-		// regenerate the content. Should be called 
-		generate.OverrideStructure(*pTargetDir)
+			// regenerate the content. Should be called
+			generate.OverrideStructure(*pTargetDir)
+		}
 	}
+
 }

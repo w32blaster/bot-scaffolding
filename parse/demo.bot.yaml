@@ -29,10 +29,15 @@ commands:
         - action: increaseCount
           label: 
             en_gb: "Plus"
-            ru_ru: "Plus"
+            ru_ru: "Плюс"
         - action: decreaseCount
           label: 
             en_gb: "Minus"
-            ru_ru: "Minus"
+            ru_ru: "Минус"
 
+      - row:
+        - action: onCacnelClicked
+          label: 
+            en_gb: "Cancel`"
+            ru_ru: "Отмена"
 

@@ -20,6 +20,7 @@ type (
 		ButtonRows []Row             `yaml:"buttons"`
 	}
 
+	// Root is root of YAML file
 	Root struct {
 		Commands map[string]Command `yaml:"commands"`
 	}

@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -46,7 +47,7 @@ func main() {
 			if update.Message.IsCommand() {
 
 				// This is a command starting with slash
-				commands.ProcessCommand(command)
+				command.ProcessCommand(command)
 
 			} else {
 
@@ -67,3 +68,4 @@ func main() {
 	}
 
 }
+

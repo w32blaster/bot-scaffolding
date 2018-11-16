@@ -6,10 +6,10 @@ package commands
 // GENERATED 
 // Should be implemented by a custom logic, because UI widget rendering will be done by generated code from YAML file
 type CommandProcessor interface {
-	
-	ProcessHelpCommand(command string)
-	
-	ProcessStartCommand(command string)
+	 
+	OnHelpCommandCalled(command string)
+	 
+	OnStartCommandCalled(command string)
 	
 }
 
@@ -24,12 +24,12 @@ func SetImpl(i CommandProcessor) {
 func ProcessCommand(command string) {
 
 	switch command {
-			
-		case "/Help":
+	
+		case "help":
 			processHelpCommand(command)
 		}
-			
-		case "/Start":
+	
+		case "start":
 			processStartCommand(command)
 		}
 	
@@ -37,26 +37,26 @@ func ProcessCommand(command string) {
 
 
 // GENERATED
-// process the Help command
+// process the /help command
 func processHelpCommand(command string) {
 
 	// .. here comes some logic
 
 	// call custom logic
-	impl.ProcessHelpCommand(command)
+	impl.OnHelpCommandCalled(command)
 
 	// ... here we render UI
 }
 
 
 // GENERATED
-// process the Start command
+// process the /start command
 func processStartCommand(command string) {
 
 	// .. here comes some logic
 
 	// call custom logic
-	impl.ProcessStartCommand(command)
+	impl.OnStartCommandCalled(command)
 
 	// ... here we render UI
 }

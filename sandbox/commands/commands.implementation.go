@@ -12,14 +12,14 @@ func New() CommandProcessor {
 }
 
 
-// ProcessHelpCommand process the "/Help" command 
-func (m *MyCommandProcessor) ProcessHelpCommand(command string) {
+// OnHelpCommandCalled process the "/help" command 
+func (m *MyCommandProcessor) OnHelpCommandCalled(command string) {
 	// your custom logic here
 }
 
 
-// ProcessStartCommand process the "/Start" command 
-func (m *MyCommandProcessor) ProcessStartCommand(command string) {
+// OnStartCommandCalled process the "/start" command 
+func (m *MyCommandProcessor) OnStartCommandCalled(command string) {
 	// your custom logic here
 }
 

@@ -16,9 +16,9 @@ func New() CommandProcessor {
 	return MyCommandProcessor{}
 }
 
-{{ range .commands }}
-// Process{{ . }}Command process the "/{{ . }}" command 
-func (m *MyCommandProcessor) Process{{ . }}Command(command string) {
+{{ range $key, $value := .Commands }}
+// On{{ commandNameCapital $key }}CommandCalled process the "{{ $key }}" command 
+func (m *MyCommandProcessor) On{{ commandNameCapital $key }}CommandCalled(command string) {
 	// your custom logic here
 }
 
@@ -35,8 +35,8 @@ package commands
 // GENERATED 
 // Should be implemented by a custom logic, because UI widget rendering will be done by generated code from YAML file
 type CommandProcessor interface {
-	{{ range .commands }}
-	Process{{ . }}Command(command string)
+	{{ range $key, $value := .Commands }} 
+	On{{ commandNameCapital $key }}CommandCalled(command string)
 	{{ end }}
 }
 
@@ -51,22 +51,22 @@ func SetImpl(i CommandProcessor) {
 func ProcessCommand(command string) {
 
 	switch command {
-	{{ range .commands }}		
-		case "/{{ . }}":
-			process{{ . }}Command(command)
+	{{ range $key, $value := .Commands }}
+		case "{{ commandName $key }}":
+			process{{ commandNameCapital $key }}Command(command)
 		}
 	{{ end }}
 }
 
-{{ range .commands }}
+{{ range $key, $value := .Commands }}
 // GENERATED
-// process the {{ . }} command
-func process{{ . }}Command(command string) {
+// process the {{ $key }} command
+func process{{ commandNameCapital $key }}Command(command string) {
 
 	// .. here comes some logic
 
 	// call custom logic
-	impl.Process{{ . }}Command(command)
+	impl.On{{ commandNameCapital $key }}CommandCalled(command)
 
 	// ... here we render UI
 }
